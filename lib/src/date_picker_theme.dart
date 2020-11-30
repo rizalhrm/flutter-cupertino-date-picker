@@ -68,7 +68,7 @@ class DateTimePickerTheme with Diagnosticable {
   final Widget confirm;
 
   /// Custom title [Widget]. If specify a title widget, the cancel and confirm widgets will not display.
-  final Widget title;
+  final String title;
 
   /// Whether display title widget or not. If set false, the default cancel and confirm widgets will not display, but the custom title widget will display if had specified one custom title widget.
   final bool showTitle;

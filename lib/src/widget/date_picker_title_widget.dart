@@ -23,10 +23,27 @@ class DatePickerTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (pickerTheme.title != null) {
-      return pickerTheme.title;
-    }
-    return Container(
+    return pickerTheme.title != null ? Container(
+      height: pickerTheme.titleHeight,
+      decoration: BoxDecoration(color: pickerTheme.backgroundColor),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          _renderCancelWidget(context),
+          Container(
+            height: pickerTheme.titleHeight,
+            child: FlatButton(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+              child: Text(
+                pickerTheme.title,
+              ),
+              onPressed: () {}
+            ),
+          ),
+          _renderConfirmWidget(context),
+        ],
+      ),
+    ) : Container(
       height: pickerTheme.titleHeight,
       decoration: BoxDecoration(color: pickerTheme.backgroundColor),
       child: Row(
